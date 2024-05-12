@@ -15,6 +15,9 @@ class Game:
 		self.scaling_factor_x = 1
 		self.scaling_factor_y = 1
 
+		self.menu = False
+		self.game_end = False
+
 
 
 		# key_pressed_vars:
@@ -25,6 +28,30 @@ class Game:
 		self.space_pressed = False
 		self.mouse_left_pressed = False
 		self.mouse_right_pressed = False
+
+
+		# importing stuff
+
+		#	 font
+		self.font_10 = pg.font.Font("assets/font/pixel_font.otf", 10)
+		self.font_12 = pg.font.Font("assets/font/pixel_font.otf", 12)
+		self.font_14 = pg.font.Font("assets/font/pixel_font.otf", 14)
+		self.font_16 = pg.font.Font("assets/font/pixel_font.otf", 16)
+		self.font_18 = pg.font.Font("assets/font/pixel_font.otf", 18)
+		self.font_20 = pg.font.Font("assets/font/pixel_font.otf", 20)
+		self.font_25 = pg.font.Font("assets/font/pixel_font.otf", 25)
+		self.font_30 = pg.font.Font("assets/font/pixel_font.otf", 30)
+		self.font_35 = pg.font.Font("assets/font/pixel_font.otf", 35)
+		self.font_40 = pg.font.Font("assets/font/pixel_font.otf", 40)
+		self.font_45 = pg.font.Font("assets/font/pixel_font.otf", 45)
+		self.font_50 = pg.font.Font("assets/font/pixel_font.otf", 50)
+		self.font_60 = pg.font.Font("assets/font/pixel_font.otf", 60)
+		self.font_70 = pg.font.Font("assets/font/pixel_font.otf", 70)
+		self.font_80 = pg.font.Font("assets/font/pixel_font.otf", 80)
+		self.font_90 = pg.font.Font("assets/font/pixel_font.otf", 90)
+		self.font_100 = pg.font.Font("assets/font/pixel_font.otf", 100)
+		self.font_150 = pg.font.Font("assets/font/pixel_font.otf", 150)
+		self.font_200 = pg.font.Font("assets/font/pixel_font.otf", 200)
 
 	def main_game_loop(self):
 		while True:
@@ -92,10 +119,23 @@ class Game:
 
 
 	def calc_game_state(self):
-		pass
+		if self.menu:
+			pass
+		elif self.game_end:
+			pass
+		else:
+			pass
 
 	def render_new_frame(self):
-		pass
+		self.screen.fill((28, 5, 42))
+		if self.menu:
+			pass
+		elif self.game_end:
+			pass
+		else:
+			pass
+
+
 				
 
 
@@ -108,6 +148,11 @@ class Game:
 		screen = self.screen
 		scaled_screen = pg.transform.scale(screen, pg.display.get_surface().get_size())
 		return scaled_screen
+
+	def render_text_center(self, text:str, font:pg.font.Font, color:tuple, pos:tuple):
+		text = font.render(text, False, color)
+		text_rect = text.get_rect(center= pos)
+		self.screen.blit(text, text_rect)
 
 game = Game()
 game.main_game_loop()
