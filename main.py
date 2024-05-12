@@ -34,13 +34,7 @@ class Game:
 
 			# debugging:
 
-			print(f"w_pressed: {self.w_pressed}")
-			print(f"a_pressed: {self.a_pressed}")
-			print(f"s_pressed: {self.s_pressed}")
-			print(f"d_pressed: {self.d_pressed}")
-			print(f"space_pressed: {self.space_pressed}")
-			print(f"mouse_left_pressed: {self.mouse_left_pressed}")
-			print(f"mouse_right_pressed: {self.mouse_right_pressed}")
+			
 			
 			# update display
 			self.display.blit(self.resize_screen(), (0,0))
